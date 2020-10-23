@@ -1,3 +1,7 @@
+/**
+ * Clase que define un arreglo de 5 fehcas y muestra su contenido.
+ * @author Puebla Aldama Diego.
+ */
 public class ArregloFechas {
     public static void main(String[] args) {
     MiFecha aFechas[] = new MiFecha[5];

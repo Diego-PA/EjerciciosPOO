@@ -1,4 +1,10 @@
+/**
+ * Clase Cliente que tiene ambos setters y un método para mostrar el contenido.
+ * @author Diego Puebla Aldama.
+ */
+
 public class Cliente {
+    
     private int idCliente;
     private String nombre;
 
