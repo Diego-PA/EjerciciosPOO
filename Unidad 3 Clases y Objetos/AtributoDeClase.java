@@ -7,7 +7,7 @@ public class AtributoDeClase {
     public static int eSiguiente;
 
     //Método que incrementa el atributo estático en 1.
-    public void incremento(){
+    public static void incremento(){
 
         AtributoDeClase.eSiguiente += 1;
     }

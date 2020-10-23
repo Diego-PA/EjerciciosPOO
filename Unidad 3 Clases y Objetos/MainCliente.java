@@ -4,23 +4,25 @@
  */
 public class MainCliente {
     public static void main(String[] args) {
-        //Instancias
-        Cliente oCliente1 = new Cliente();
-        Cliente oCliente2 = new Cliente();
-        Cliente oCliente3 = new Cliente();
-        
-        //Inicialización
-        oCliente1.setId(1);
-        oCliente2.setId(2);
-        oCliente3.setId(3);
 
-        oCliente1.setNombre("Juliana Morales Ramirez");
-        oCliente2.setNombre("Jorge Perez Torres");
-        oCliente3.setNombre("Isaac Alonso Ruiz");
+        Cliente aClientes[] = new Cliente[3];
+
+        aClientes[0] = new Cliente();
+        aClientes[1] = new Cliente();
+        aClientes[2] = new Cliente();
+
+        //Inicialización
+        aClientes[0].setId(1);
+        aClientes[1].setId(1);
+        aClientes[2].setId(1);
+
+        aClientes[0].setNombre("Juliana Morales Ramirez");
+        aClientes[1].setNombre("Jorge Perez Torres");
+        aClientes[2].setNombre("Isaac Alonso Ruiz");
 
         //Resultado
-        oCliente1.escribir();
-        oCliente2.escribir();
-        oCliente3.escribir();
+        aClientes[0].escribir();
+        aClientes[1].escribir();
+        aClientes[2].escribir();
     }
 }
