@@ -20,8 +20,10 @@ public class PruebaAtributoClase {
         System.out.println("Desde la clase:" + AtributoDeClase.eSiguiente);
         //Valor 2
         AtributoDeClase.incremento();
+        System.out.println("Desde la clase:" + AtributoDeClase.eSiguiente);
         //Valor 3
         AtributoDeClase.incremento();
+        System.out.println("Desde la clase:" + AtributoDeClase.eSiguiente);
 
         //Impresiones Finales.
         System.out.println("Desde las 3 instancias:");
