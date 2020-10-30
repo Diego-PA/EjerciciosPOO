@@ -4,60 +4,55 @@ public class AplicacionCliente {
 
     public static void main(String[] args) {
         
-        ArregloCliente aClientes = new ArregloCliente();
+        ArregloCliente oArreglo;
         Scanner oScanner = new Scanner(System.in);
-        int eOpcion = 0;
+        int eIndice, eTamanio, eOpcion = 0;
         String sNombre, sRFC, sDomicilio;
 
-        while (eOpcion != 6) {
-            
-            System.out.println("Aplicación Cliente: ");
-            System.out.println("¡Hola! ¿Que deseas hacer hoy?\n1)Agregar Cliente\n2)Borrar Cliente\n3)Modificar Cliente\n4)Consultar Cliente\n5)Listar Clientes\n6)Salir");
+        System.out.println("Aplicación de arreglo de clientes: ");
+        System.out.println("Cuántos clientes será el máximo a registrar: ");
+        eTamanio = oScanner.nextInt();
+        oArreglo = new ArregloCliente(eTamanio);
+        System.out.println("Arreglo de Clientes creado.");
+
+        do {
+
+            System.out.println("Menú\n1)Agregar Cliente\n2)Borrar Cliente\n3)Modificar Cliente\n4)Consultar Cliente\n5)Listar Clientes\n6)Salir");
             eOpcion = oScanner.nextInt();
 
             switch (eOpcion) {
                 case 1:
-                    System.out.println("Nombre: ");
-                    oScanner.nextLine();
+                    System.out.println("Ingrese el nombre de la persona: ");
                     sNombre = oScanner.nextLine();
-                    System.out.println("RFC: ");
-                    oScanner.nextLine();
+                    System.out.println("Ingrese el rfc de la persona: ");
                     sRFC = oScanner.nextLine();
-                    System.out.println("DOMICILIO: ");
-                    oScanner.nextLine();
+                    System.out.println("Ingrese el domicilio de la persona: ");
                     sDomicilio = oScanner.nextLine();
-                    aClientes.agregarCliente(sNombre, sRFC, sDomicilio);
+                    oArreglo.agregarCliente(new Cliente(sNombre, sRFC, sDomicilio));
                     break;
 
                 case 2:
-                    System.out.println("RFC: ");
-                    //oScanner.nextLine();
-                    sRFC = oScanner.nextLine();
-                    aClientes.borrarCliente(sRFC);
+                    System.out.println("Ingrese el indice del cliente: ");
+                    eIndice = oScanner.nextInt();
+                    oArreglo.eliminarCliente(eIndice);
                     break;
 
                 case 3:
-                    aClientes.modificarCliente();
+                    System.out.println("Ingrese el indice del cliente: ");
+                    eIndice = oScanner.nextInt();
+                    oArreglo.consultarCliente(eIndice);
                     break;
 
                 case 4:
-                    aClientes.consultarCliente();
-                    break;
 
-                case 5:
-                    aClientes.listarClientes();
                     break;
-
-                case 6:
-                    System.out.println("Hasta luego!");
-                    break;
-
+            
                 default:
-                    System.out.println("Jajajajas elige una opción que exista :D");
                     break;
             }
 
-        }
+        } while (eOpcion == 6);
+
         oScanner.close();
     }
 }

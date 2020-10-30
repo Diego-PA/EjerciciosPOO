@@ -18,6 +18,10 @@ public class Cliente {
 
     }
 
+    public Cliente(){
+
+    }
+
     /**
      * Método que establece el atributo nombre.
      * @param nombre Nombre del cliente.
@@ -66,4 +70,7 @@ public class Cliente {
         return domicilio;
     }
 
+    public String toString(){
+        return ("Nombre: " + nombre + " RFC: " + rfc + " Domicilio: " + domicilio);
+    }
 }
