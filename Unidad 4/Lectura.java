@@ -12,5 +12,6 @@ public class Lectura {
         oLector.nextLine();
         String sCadena = oLector.nextLine();
         System.out.println("Cadena: " + sCadena);
+        
     }
 }
