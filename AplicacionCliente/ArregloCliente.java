@@ -29,12 +29,36 @@ public class ArregloCliente {
 
     }
 
-    public void modificarCliente(){
+    public void modificarCliente(int eIndice, int eSeleccion, String sParametro){
+        
+        switch (eSeleccion) {
+            case 1: //nombre
+                aClientes[eIndice].setNombre(sParametro);
+                break;
+
+            case 2: //rfc
+                aClientes[eIndice].setRfc(sParametro);
+                break;
+
+            case 3: //domicilio
+                aClientes[eIndice].setDomicilio(sParametro);
+                break;
+        
+            default:
+                System.out.println("Opción no valida.");
+                break;
+        }
 
     }
 
     public void consultarCliente(int eIndice){
         System.out.println(aClientes[eIndice].toString());
+    }
+
+    public void listarCliente(){
+        for (Cliente cliente : aClientes) {
+            System.out.println(cliente.toString());
+        };
     }
 
     public boolean arregloLleno(){

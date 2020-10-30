@@ -6,8 +6,8 @@ public class AplicacionCliente {
         
         ArregloCliente oArreglo;
         Scanner oScanner = new Scanner(System.in);
-        int eIndice, eTamanio, eOpcion = 0;
-        String sNombre, sRFC, sDomicilio;
+        int eIndice, eSeleccion, eTamanio, eOpcion = 0;
+        String sNombre, sRFC, sDomicilio, sParametro;
 
         System.out.println("Aplicación de arreglo de clientes: ");
         System.out.println("Cuántos clientes será el máximo a registrar: ");
@@ -21,7 +21,8 @@ public class AplicacionCliente {
             eOpcion = oScanner.nextInt();
 
             switch (eOpcion) {
-                case 1:
+                case 1: //Agregar
+                    oScanner.nextLine();
                     System.out.println("Ingrese el nombre de la persona: ");
                     sNombre = oScanner.nextLine();
                     System.out.println("Ingrese el rfc de la persona: ");
@@ -31,27 +32,39 @@ public class AplicacionCliente {
                     oArreglo.agregarCliente(new Cliente(sNombre, sRFC, sDomicilio));
                     break;
 
-                case 2:
+                case 2: //Borrar
                     System.out.println("Ingrese el indice del cliente: ");
                     eIndice = oScanner.nextInt();
                     oArreglo.eliminarCliente(eIndice);
                     break;
 
-                case 3:
+                case 3: //Modificar
+                    System.out.println("Ingrese el indice del cliente a modificar: ");
+                    eIndice = oScanner.nextInt();
+                    System.out.println("Elige el atrubuto a modificar:\n1) Nombre\n2) RFC\n3) Domicilio");
+                    eSeleccion = oScanner.nextInt();
+                    oScanner.nextLine();
+                    System.out.println("Ingresa el nuevo valor del atributo: ");
+                    sParametro = oScanner.nextLine();
+                    oArreglo.modificarCliente(eIndice, eSeleccion, sParametro);
+                    break;
+
+                case 4: //Consultar
                     System.out.println("Ingrese el indice del cliente: ");
                     eIndice = oScanner.nextInt();
                     oArreglo.consultarCliente(eIndice);
                     break;
 
-                case 4:
-
+                case 5: //Listar
+                    oArreglo.listarCliente();
                     break;
             
                 default:
+                    System.out.println("Hasta luego usuario!");
                     break;
             }
 
-        } while (eOpcion == 6);
+        } while (eOpcion != 6);
 
         oScanner.close();
     }
