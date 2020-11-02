@@ -1,7 +1,7 @@
 /**
  * Clase que define al objeto cliente, con métodos setters y getters.
  * @author Diego Puebla Aldama
- * @version 1.0
+ * @version 2.0
  */
 
 public class Cliente {
@@ -10,6 +10,12 @@ public class Cliente {
     private String rfc;
     private String domicilio;
 
+    /**
+     * Constructor de la clase cliente.
+     * @param sNombre El nombre del cliente.
+     * @param sRfc El RFC del cliente.
+     * @param sDomicilio El domicilio del cliente.
+     */
     public Cliente(String sNombre, String sRfc, String sDomicilio){
         
         this.nombre = sNombre;
@@ -18,6 +24,9 @@ public class Cliente {
 
     }
 
+    /**
+     * Constructor que inicia el objeto vacío.
+     */
     public Cliente(){
 
     }
@@ -70,6 +79,9 @@ public class Cliente {
         return domicilio;
     }
 
+    /**
+     * Método que permite escribir los atributos del objeto.
+     */
     public String toString(){
         return ("Nombre: " + nombre + " RFC: " + rfc + " Domicilio: " + domicilio);
     }

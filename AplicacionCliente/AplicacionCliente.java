@@ -1,20 +1,31 @@
 import java.util.Scanner;
-
+/**
+ * Clase que implementa el menú para operar el arreglo de clientes.
+ * @author Diego Puebla Aldama
+ * @version 2.0
+ */
 public class AplicacionCliente {
 
+    /**
+     * Método principal
+     */
     public static void main(String[] args) {
         
-        ArregloCliente oArreglo;
+        //Definición del arreglo de clientes.
+        ArregloCliente oArreglo; 
         Scanner oScanner = new Scanner(System.in);
         int eIndice, eSeleccion, eTamanio, eOpcion = 0;
         String sNombre, sRFC, sDomicilio, sParametro;
 
+        //Inicio de la interacción.
         System.out.println("Aplicación de arreglo de clientes: ");
         System.out.println("Cuántos clientes será el máximo a registrar: ");
         eTamanio = oScanner.nextInt();
+        //Crea el arreglo del tamaño que el usuario indicó.
         oArreglo = new ArregloCliente(eTamanio);
         System.out.println("Arreglo de Clientes creado.");
 
+        //Menú
         do {
 
             System.out.println("Menú\n1)Agregar Cliente\n2)Borrar Cliente\n3)Modificar Cliente\n4)Consultar Cliente\n5)Listar Clientes\n6)Salir");
