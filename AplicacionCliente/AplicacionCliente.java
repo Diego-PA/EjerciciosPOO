@@ -44,26 +44,29 @@ public class AplicacionCliente {
                     break;
 
                 case 2: //Borrar
-                    System.out.println("Ingrese el indice del cliente: ");
-                    eIndice = oScanner.nextInt();
-                    oArreglo.eliminarCliente(eIndice);
+                    oScanner.nextLine();
+                    System.out.println("Ingrese el nombre del cliente: ");
+                    sNombre = oScanner.nextLine();
+                    oArreglo.eliminarCliente(sNombre);
                     break;
 
-                case 3: //Modificar
-                    System.out.println("Ingrese el indice del cliente a modificar: ");
-                    eIndice = oScanner.nextInt();
+                case 3: //Modificar por nombre
+                    oScanner.nextLine();
+                    System.out.println("Ingrese el nombre del cliente a modificar: ");
+                    sNombre = oScanner.nextLine();
                     System.out.println("Elige el atrubuto a modificar:\n1) Nombre\n2) RFC\n3) Domicilio");
                     eSeleccion = oScanner.nextInt();
                     oScanner.nextLine();
                     System.out.println("Ingresa el nuevo valor del atributo: ");
                     sParametro = oScanner.nextLine();
-                    oArreglo.modificarCliente(eIndice, eSeleccion, sParametro);
+                    oArreglo.modificarCliente(sNombre, eSeleccion, sParametro);
                     break;
 
                 case 4: //Consultar
-                    System.out.println("Ingrese el indice del cliente: ");
-                    eIndice = oScanner.nextInt();
-                    oArreglo.consultarCliente(eIndice);
+                    oScanner.nextLine();
+                    System.out.println("Ingrese el nombre del cliente: ");
+                    sNombre = oScanner.nextLine();
+                    System.out.println(oArreglo.consultarCliente(sNombre));
                     break;
 
                 case 5: //Listar
