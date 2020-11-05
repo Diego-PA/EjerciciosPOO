@@ -59,43 +59,19 @@ public class ArregloCliente {
     }
 
     /**
-     * Método para "eliminar" objetos cliente del arreglo.
-     * @param eIndice
+     * Método para borrar objetos cliente del arreglo.
+     * @param ePosicion La posicion del cliente a borrar en el arreglo.
      */
-    public void eliminarCliente(String sNombre){
+    public void borrarCliente(int ePosicion){
         
-        int ePosicion = 0;
+        Cliente oCliente = new Cliente();
 
-        //Buscar el nombre
-        if (arregloVacio()) {
-            
-            System.out.println("Underflow");
-        
-        } else {
-
-            while (aClientes[ePosicion].getNombre().compareTo(sNombre) != 0) {
-                ePosicion++;
-            }
-
-            //Eliminar el contenido
-            aClientes[ePosicion].setNombre(null);
-            aClientes[ePosicion].setRfc(null);
-            aClientes[ePosicion].setDomicilio(null);
-
-            //Si necesita recorrer
-            if (ePosicion < ePos) {
-                
-                Cliente oTemporal = aClientes[ePosicion];
-
-                //Recorrer
-                for (int i = ePosicion; i < ePos - 1; i++) {
-                    aClientes[ePosicion] = aClientes[ePosicion + 1];
-                }
-
-                aClientes[ePosicion + 1] = oTemporal;
-            }
-
+        for (int eRecorre = ePosicion; eRecorre <= ePos -1; eRecorre++) {
+            aClientes[eRecorre] = aClientes[eRecorre + 1];
         }
+
+        aClientes[ePos] = oCliente;
+        ePos--;
 
     }
 
@@ -215,5 +191,38 @@ public class ArregloCliente {
      */
     public boolean arregloVacio(){
         return ePos == -1;
+    }
+
+    /**
+     * Método que realiza una busqueda del nombre mediante el algoritmo de busqueda binaria.
+     * @param sNombre EL nombre del cliente a buscar.
+     * @return Devuelve la posición en el arreglo de dicho nombre, en caso de no existir o que el arreglo esté vacío devuelve -1.
+     */
+    public int buscarBinario (String sNombre){
+    
+        int eMayor, eMedio, eMenor;
+        
+        if (arregloVacio()) { //Si devuelve -1 significa que el arreglo está vacío o no lo encontro, en este caso está vacío.
+            return -1;
+        } else {
+            eMenor = 0;
+            eMayor = ePos;
+            eMedio = (eMenor + eMayor) / 2;
+            while (eMenor < eMayor && aClientes[eMedio].getNombre().compareTo(sNombre) != 0) {
+                
+                if (aClientes[eMedio].getNombre().compareTo(sNombre) > 0) {
+                    eMayor = eMedio - 1;
+                } else {
+                    eMenor = eMedio + 1;
+                }
+                eMedio = (eMenor + eMayor) / 2;
+            }
+            
+            if (aClientes[eMedio].getNombre().compareTo(sNombre) == 0) {
+                return eMedio; //Regresa la posición del arreglo.
+            } else {
+                return -1; //Aquí no lo encontró.
+            }
+        }
     }
 }

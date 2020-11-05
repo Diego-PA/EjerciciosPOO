@@ -28,7 +28,9 @@ public class Cliente {
      * Constructor que inicia el objeto vacío.
      */
     public Cliente(){
-
+        this.nombre = null;
+        this.domicilio = null;
+        this.rfc = null;
     }
 
     /**
