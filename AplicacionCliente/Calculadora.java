@@ -76,37 +76,27 @@ public class Calculadora{
         do {
             System.out.println("Calculadora:\nSeleccione una operación:\n1) Suma\n2) Resta\n3) Multiplicación\n4) División\n5) Salir.");
             eOpcion = oScanner.nextInt();
-
+            if (eOpcion > 0 && eOpcion <5){
+                System.out.println("Dame el primer numero: ");
+                calculadora.fNumero1 = oScanner.nextFloat();
+                System.out.println("Dame el segundo numero: ");
+                calculadora.fNumero2 = oScanner.nextFloat();
+            }
+            
             switch (eOpcion) {
                 case 1:
-                    System.out.println("Dame el primer numero: ");
-                    calculadora.fNumero1 = oScanner.nextFloat();
-                    System.out.println("Dame el segundo numero: ");
-                    calculadora.fNumero2 = oScanner.nextFloat();
                     System.out.println(calculadora.Suma(calculadora.fNumero1, calculadora.fNumero2));
                     break;
 
                 case 2:
-                    System.out.println("Dame el primer numero: ");
-                    calculadora.fNumero1 = oScanner.nextFloat();
-                    System.out.println("Dame el segundo numero: ");
-                    calculadora.fNumero2 = oScanner.nextFloat();
                     System.out.println(calculadora.Resta(calculadora.fNumero1, calculadora.fNumero2));
                     break;
 
                 case 3:
-                    System.out.println("Dame el primer numero: ");
-                    calculadora.fNumero1 = oScanner.nextFloat();
-                    System.out.println("Dame el segundo numero: ");
-                    calculadora.fNumero2 = oScanner.nextFloat();
                     System.out.println(calculadora.Multiplicacion(calculadora.fNumero1, calculadora.fNumero2));
                     break;
 
                 case 4:
-                    System.out.println("Dame el primer numero: ");
-                    calculadora.fNumero1 = oScanner.nextFloat();
-                    System.out.println("Dame el segundo numero: ");
-                    calculadora.fNumero2 = oScanner.nextFloat();
                     System.out.println(calculadora.Division(calculadora.fNumero1, calculadora.fNumero2));
                     break;
 

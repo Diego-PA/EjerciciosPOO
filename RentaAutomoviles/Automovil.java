@@ -10,6 +10,10 @@ public class Automovil {
     private String marca;
     private String modelo;
 
+    public Automovil(){
+        
+    }
+
     /**
      * Constructor de la clase automovil.
      * @param id Se refiere al identificador único del automovil.

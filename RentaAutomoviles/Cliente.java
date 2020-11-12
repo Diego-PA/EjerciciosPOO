@@ -7,6 +7,10 @@ public class Cliente {
     private int idCliente;
     private String nombre;
 
+    public Cliente(){
+        
+    }
+
     /**
      * Constructor de la clase cliente.
      * @param id Hace referencia al identificador único de cada objeto cliente.
